@@ -1,20 +1,39 @@
-﻿Album albumDoMFDOOM = new Album();
-albumDoMFDOOM.Nome = "Mm.. Food";
+﻿Banda MFDOOM = new Banda("MF DOOM");
 
-Musica musica1 = new Musica();
-musica1.Nome = "Beef Rapp";
-musica1.Duracao = 279;
+Album albumDoMFDOOM = new Album("Mm.. Food");
 
-Musica musica2 = new Musica();
-musica2.Nome = "Hoe Cakes";
-musica2.Duracao = 234;
+Musica musica1 = new Musica(MFDOOM, "Beef Rapp")
+{
+    Duracao = 279,
+    Disponivel = true
+};
 
-Musica musica3 = new Musica();
-musica3.Nome = "Potholderz";
-musica3.Duracao = 200;
+
+Musica musica2 = new Musica(MFDOOM, "Hoe Cakes")
+{
+    Duracao = 234,
+    Disponivel = true
+};
+
+
+Musica musica3 = new Musica(MFDOOM, "Potholderz")
+{
+    Duracao = 200,
+    Disponivel = true
+};
+
 
 albumDoMFDOOM.AdicionarMusica(musica1);
 albumDoMFDOOM.AdicionarMusica(musica2);
 albumDoMFDOOM.AdicionarMusica(musica3);
+MFDOOM.AdcionarAlbum(albumDoMFDOOM);
 
+musica1.ExibirFichaTecnica();
+Console.WriteLine("");
+musica2.ExibirFichaTecnica();
+Console.WriteLine("");
+musica3.ExibirFichaTecnica();
+Console.WriteLine("");
 albumDoMFDOOM.ExibirMusicasDoAlbum();
+Console.WriteLine("");
+MFDOOM.ExibirDiscogradia();
