@@ -1,16 +1,21 @@
 ﻿public class Episodio
 {
-    public Episodio(string nome, int duracao, List<Episodio> episodiosExistentes)
+    private static int contadorEpisodios = 0;
+    public Episodio(string nome, int duracao)
     {
         Nome = nome;
         Duracao = duracao;
-        NumeroEpisodio = episodiosExistentes.Count + 1;
+        NumeroEpisodio = ++contadorEpisodios;
     }
     public string Nome { get; }
     public int Duracao { get; }
-    public int NumeroEpisodio { get; }
+    public string Convidado { get; set; }
+    public int NumeroEpisodio { get; set; } 
 
-    
+    public void ExibirDetalheEpisodio()
+    {
+        Console.WriteLine($"Episodio: {Nome}");
+        Console.WriteLine($"Duração: {Duracao}");
 
-
+    }
 }

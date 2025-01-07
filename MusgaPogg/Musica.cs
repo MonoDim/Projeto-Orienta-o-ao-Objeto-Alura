@@ -11,7 +11,6 @@
     public Banda Artista { get; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
-    public string DescricaoResumida => $"A musica {Nome} pertence ao artista {Artista}";
     
 
 
